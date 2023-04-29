@@ -1,0 +1,63 @@
+﻿@model IEnumerable<BookingApp.Good>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FromAdderess)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ToAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GoodsType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Weight)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.FromAdderess)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ToAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GoodsType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Weight)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Price)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.GoodsId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.GoodsId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.GoodsId })
+        </td>
+    </tr>
+}
+
+</table>
